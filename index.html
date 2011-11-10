@@ -16,14 +16,23 @@
 <div data-role="page">
 
 	<div data-role="header">
-		<h1>Single page</h1>
+		<h1>Login Page</h1>
 	</div><!-- /header -->
 
-	<div data-role="content">	
-		<p>This is a single page boilerplate template that you can copy to build you first jQuery Mobile page. Each link or form from here will pull a new page in via Ajax to support the animated page transitions.</p>		
-		<p>Just view the source and copy the code to get started. All the CSS and JS is linked to the jQuery CDN versions so this is super easy to set up. Remember to include a meta viewport tag in the head to set the zoom level.</p>
+	<div data-role="content">
+	  <form action="form.php" method="post"> ... </form>
+    
+    <div data-role="fieldcontain" class="ui-hide-label">
+    	<label for="username">Username:</label>
+    	<input type="text" name="username" id="username" value="" placeholder="Username"/>
+    </div>
 
-		<p>This template is standard HTML document with a single "page" container inside, unlike a <a href="multipage-template.html" data-ajax="false">multi-page template</a> that has multiple pages within it. We strongly recommend building your site or app as a series of separate pages like this because it's cleaner, more lightweight and works better without JavaScript.</p>
+    <div data-role="fieldcontain" class="ui-hide-label">
+    	<label for="username">Username:</label>
+    	<input type="password" name="password" id="password" value="" placeholder="Password"/>
+    </div>
+
+
 	</div><!-- /content -->
 	
 	<div data-role="footer">
