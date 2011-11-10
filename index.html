@@ -20,8 +20,8 @@
 	</div><!-- /header -->
 
 	<div data-role="content">
-	  <form action="form.php" method="post"> ... </form>
-    
+	  <form action="form.php" method="post">
+    <fieldset>
     <div data-role="fieldcontain" class="ui-hide-label">
     	<label for="username">Username:</label>
     	<input type="text" name="username" id="username" value="" placeholder="Username"/>
@@ -31,8 +31,12 @@
     	<label for="username">Username:</label>
     	<input type="password" name="password" id="password" value="" placeholder="Password"/>
     </div>
+    
+    <button type="submit" data-theme="b" name="submit" value="submit-value">Submit</button>
 
-
+    </fieldset>
+    
+    </form>
 	</div><!-- /content -->
 	
 	<div data-role="footer">
