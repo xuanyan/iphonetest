@@ -9,7 +9,7 @@
  *
  */
 
-
+echo 'ok';exit;
 phpinfo();
 
 ?>
