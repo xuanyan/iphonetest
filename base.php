@@ -16,7 +16,7 @@ abstract class base_abstract
     {
         session_start();
         $this->view = new Templite(ROOT_PATH.'/template');
-        $this->db = Database::connect('pdo', 'sqlite:'.ROOT_PATH.'./db.sqlite');
+        $this->db = Database::connect('pdo', 'sqlite:'.ROOT_PATH.'/db.sqlite');
     }
 
     function isPost()
