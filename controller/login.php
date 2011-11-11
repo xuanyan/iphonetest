@@ -19,6 +19,11 @@ class Action extends base_abstract
         }
         $this->view->display('login.html');
     }
+
+    function doLogin()
+    {
+        print_r($_POST);
+    }
 }
 
 

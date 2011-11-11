@@ -79,10 +79,7 @@ abstract class Controller
         }
 
         if (!file_exists($file)) {
-            $action = $controller;
-            $controller = 'index';
-            $file = $t_path.'/'.$controller.'.php';
-            //throw new Exception("Controller not exists: $controller", 404);
+            throw new Exception("Controller not exists: $controller", 404);
         }
 
         include $file;
