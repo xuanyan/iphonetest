@@ -1,0 +1,37 @@
+<!DOCTYPE html> 
+<html> 
+
+<?php $this->display('lib/header.html');?>
+
+<body> 
+
+<div data-role="page">
+
+	<div data-role="header" data-theme="d">
+		<h1>Login Page</h1>
+	</div><!-- /header -->
+
+	<div data-role="content" class="ui-body ui-body-d">
+	  <form action="form.php" method="post">
+    <fieldset>
+    <div data-role="fieldcontain" class="ui-hide-label">
+    	<label for="username">Username:</label>
+    	<input type="text" name="username" id="username" value="" placeholder="Username"/>
+    </div>
+
+    <div data-role="fieldcontain" class="ui-hide-label">
+    	<label for="username">Username:</label>
+    	<input type="password" name="password" id="password" value="" placeholder="Password"/>
+    </div>
+    
+    <button type="submit" data-theme="d" name="submit" value="submit-value">Submit</button>
+
+    </fieldset>
+    
+    </form>
+	</div><!-- /content -->
+	
+</div><!-- /page -->
+
+</body>
+</html>
