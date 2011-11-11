@@ -9,6 +9,7 @@
  *
  */
 
+
 abstract class base_abstract
 {
     function __construct()
