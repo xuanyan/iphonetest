@@ -14,6 +14,7 @@ abstract class base_abstract
 {
     function __construct()
     {
+        session_start();
         $this->view = new Templite(ROOT_PATH.'/template');
         $this->db = Database::connect('pdo', 'sqlite:'.ROOT_PATH.'./db.sqlite');
     }

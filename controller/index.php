@@ -14,6 +14,9 @@ class Action extends base_abstract
     
     function index()
     {
+        if (empty($_SESSION['id'])) {
+            $this->redirect('?r=login');
+        }
         $this->view->display('index.html');
     }
 }
