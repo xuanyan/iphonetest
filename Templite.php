@@ -29,6 +29,11 @@ class Templite
         extract($this->val);
         require $this->template_dir.'/'.$file;
     }
+
+    private function include($file)
+    {
+        include $this->template_dir.'/'.$file;
+    }
 }
 
 
