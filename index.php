@@ -9,19 +9,24 @@
  *
  */
 
-require './Library/__init__.php';
+define('ROOT_PATH', dirname(__FILE__));
+define('SITE_URL', 'http://'.$_SERVER['HTTP_HOST']);
 
-$db = Database::connect('pdo', 'sqlite:./db.sqlite');
+require ROOT_PATH.'/Library/__init__.php';
+require ROOT_PATH.'/base.php';
 
-if (!$info = $db->getRow("SELECT * FROM user WHERE name = ?", 'xuanyan')) {
-    $db->exec("INSERT INTO user (name, password) VALUES (?, ?)", 'xuanyan', sha1('123456789'));
+try {
+    if (($result = Controller::dispatch(@$_GET['r'], ROOT_PATH.'/controller')) && Controller::$format == 'json') {
+        echo json_encode($result);
+    }
+} catch (Exception $e) {
+    // out put 404 page
+    if ($e->getCode() == 404) {
+        header("HTTP/1.0 404 Not Found");
+        echo 'page not found';
+        exit;
+    }
+    die($e);
 }
-
-print_r($info);
-
-//$v = new Templite('./template');
-
-//$v->display('index.html');
-
 
 ?>
