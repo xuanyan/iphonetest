@@ -8,22 +8,29 @@
 <div data-role="page">
 
 	<div data-role="header" data-theme="d">
-		<h1>Login Page</h1>
+		<h1>Add Person</h1>
+		<a href="#" data-icon="back" class="ui-btn-right" data-iconpos="notext" data-rel="back">Add</a>
 	</div><!-- /header -->
 
 	<div data-role="content" class="ui-body ui-body-d">
 	  <form action="?r=login/doLogin" method="post">
     <fieldset>
     <div data-role="fieldcontain" class="ui-hide-label">
-    	<label for="username">Username:</label>
-    	<input type="text" name="username" id="username" placeholder="Username"/>
+    	<label>Name:</label>
+    	<input type="text" name="info[name]" placeholder="Name"/>
     </div>
 
     <div data-role="fieldcontain" class="ui-hide-label">
-    	<label for="username">Username:</label>
-    	<input type="password" name="password" id="password" value="" placeholder="Password"/>
+    	<label>Tel:</label>
+    	<input type="tel" name="info[tel]" placeholder="Tel"/>
     </div>
     
+    
+    <label for="textarea">Note:</label>
+  	<textarea name="info[note]"></textarea>
+    <script type="text/javascript" charset="utf-8">
+      $('textarea').textinput();	
+    </script>
     <button type="submit" data-theme="d" name="submit" value="submit-value">Submit</button>
 
     </fieldset>
