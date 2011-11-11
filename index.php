@@ -11,7 +11,7 @@
 
 require './Library/__init__.php';
 
-$db = Database::connect('sqlite3', './db.sqlite');
+$db = Database::connect('pdo', 'sqlite:./db.sqlite');
 
 if (!$info = $db->getRow("SELECT * FROM user WHERE name = ?", 'xuanyan')) {
     $db->exec("INSERT INTO user (name, password) VALUES (?, ?)", 'xuanyan', sha1('123456789'));
