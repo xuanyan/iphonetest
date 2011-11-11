@@ -9,10 +9,19 @@
  *
  */
 
-require './Library/Templite.php';
+require './Library/__init__.php';
 
-$v = new Templite('./template');
-$v->display('index.html');
+$db = Database::connect('sqlite3', './db.sqlite');
+
+if (!$info = $db->getRow("SELECT * FROM user WHERE name = ?", 'xuanyan')) {
+    $db->exec("INSERT INTO user (name, password) VALUES (?, ?)", 'xuanyan', sha1('123456789'));
+}
+
+print_r($info);
+
+//$v = new Templite('./template');
+
+//$v->display('index.html');
 
 
 ?>

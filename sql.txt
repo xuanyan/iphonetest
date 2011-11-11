@@ -1,0 +1,3 @@
+CREATE  TABLE "main"."user" ("id" INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL , "name" CHAR NOT NULL , "password" CHAR NOT NULL )
+
+CREATE  TABLE "main"."contact" ("id" INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL , "user_id" INTEGER NOT NULL , "name" CHAR NOT NULL , "tel" CHAR NOT NULL , "note" CHAR NOT NULL , "append_info" TEXT NOT NULL )
