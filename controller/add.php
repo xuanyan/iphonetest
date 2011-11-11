@@ -19,6 +19,16 @@ class Action extends base_abstract
         }
         $this->view->display('add.html');
     }
+
+    function doSave()
+    {
+        if (empty($_SESSION['id'])) {
+            $this->redirect('?r=login');
+        }
+        $info = _POST('info', array());
+        $this->db->exec("INSERT INTO contact (uid, name, tel, node) VALUES (?,?,?,?)", $_SESSION['id'], $info['name'], $info['tel'], $info['node']);
+        $this->redirect('/');
+    }
 }
 
 ?>
