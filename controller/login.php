@@ -22,7 +22,11 @@ class Action extends base_abstract
 
     function doLogin()
     {
-        print_r($_POST);
+        $info = $this->db->getRow("SELECT * FROM user WHERE name = ?", $_POST['username']);
+        if ($info['password'] == sha1($_POST['password'])) {
+            $_SESSION = $info;
+        }
+        $this->redirect('/');
     }
 }
 
