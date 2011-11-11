@@ -17,6 +17,7 @@ class Templite
     function __construct($template_dir)
     {
         $this->template_dir = $template_dir;
+        $this->assign('TEMPLATE_DIR', $template_dir);
     }
 
     function assign($key, $val)
@@ -30,10 +31,6 @@ class Templite
         require $this->template_dir.'/'.$file;
     }
 
-    private function include($file)
-    {
-        include $this->template_dir.'/'.$file;
-    }
 }
 
 

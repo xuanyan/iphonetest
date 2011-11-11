@@ -9,7 +9,7 @@
  *
  */
 
-require './Templite.php';
+require './Library/Templite.php';
 
 $v = new Templite('./template');
 $v->display('index.html');
