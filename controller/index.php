@@ -17,6 +17,9 @@ class Action extends base_abstract
         if (empty($_SESSION['id'])) {
             $this->redirect('?r=login');
         }
+        $data = $this->db->getAll("SELECT * FROM contact WHERE user_id = ?", $_SESSION['id']);
+        $this->view->assign('data', $data);
+        
         $this->view->display('index.html');
     }
 }

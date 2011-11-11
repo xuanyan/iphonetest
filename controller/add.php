@@ -26,7 +26,7 @@ class Action extends base_abstract
             $this->redirect('?r=login');
         }
         $info = _POST('info', array());
-        $this->db->exec("INSERT INTO contact (uid, name, tel, node) VALUES (?,?,?,?)", $_SESSION['id'], $info['name'], $info['tel'], $info['node']);
+        $this->db->exec("INSERT INTO contact (user_id, name, tel, note, append_info) VALUES (?,?,?,?,'')", $_SESSION['id'], $info['name'], $info['tel'], $info['note']);
         $this->redirect('/');
     }
 }

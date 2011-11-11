@@ -41,7 +41,9 @@ class PDOWrapper extends DatabaseAbstract implements DatabaseWrapper
             if (is_array($params[0])) {
                 $params = $params[0];
             }
-            $sth = $this->link->prepare($sql);
+            if (!$sth = $this->link->prepare($sql)) {
+                throw new Exception("Error sql prepare:$sql");
+            }
             if (!$sth->execute($params)) {
                 throw new Exception("Error sql prepare:$sql");
             }
