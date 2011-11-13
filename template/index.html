@@ -8,7 +8,7 @@
 	<div data-role="page" class="type-interior" >
 
   	<div data-role="header" data-theme="d" data-position="fixed">
-  	  	<a href="?r=logout" data-icon="delete">Logout</a>
+  	  	<a href="?r=logout" data-icon="delete" data-transition="flip">Logout</a>
   	  	<h1>Search filter bar</h1>
 		    <a href="#two" data-icon="plus" class="ui-btn-right" data-iconpos="notext" data-transition="slidedown" data-rel="dialog">Add</a>
 	  </div><!-- /header -->
@@ -66,11 +66,10 @@
 
     </div><!-- /page two -->
     
-    <!-- <script type="text/javascript" charset="utf-8">
+    <script type="text/javascript" charset="utf-8">
       $('#two').live( 'pageshow',function(event, ui){
         $('#two form')[0].reset();
-        $('input[name=info[name]]').focus();
       });
-    </script> -->
+    </script>
 </body>
 </html>

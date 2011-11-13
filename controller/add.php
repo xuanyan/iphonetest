@@ -29,7 +29,12 @@ class Action extends base_abstract
             $this->redirect('?r=login');
         }
         $info = _POST('info', array());
-        $this->db->exec("INSERT INTO contact (user_id, name, tel, note, append_info) VALUES (?,?,?,?,'')", $_SESSION['id'], $info['name'], $info['tel'], $info['note']);
+        $id = _GET('id', 0);
+        if ($id) {
+            $this->db->exec("UPDATE contact SET name = ?, tel = ?, note = ?", $info['name'], $info['tel'], $info['note']);
+        } else {
+            $this->db->exec("INSERT INTO contact (user_id, name, tel, note, append_info) VALUES (?,?,?,?,'')", $_SESSION['id'], $info['name'], $info['tel'], $info['note']);
+        }
         $this->redirect('/');
     }
     
