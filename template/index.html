@@ -69,6 +69,10 @@
     <script type="text/javascript" charset="utf-8">
       $('#two').live( 'pageshow',function(event, ui){
         $('#two form')[0].reset();
+        $('input[name=info[name]]').focus();
+      });
+      $('ul li > a').live('swiperight', function(event, ui){
+        alert($(this).html());
       });
     </script>
 </body>
