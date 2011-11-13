@@ -67,8 +67,8 @@
     </div><!-- /page two -->
     
     <script type="text/javascript" charset="utf-8">
-      $('a[href="#two"]').click(function(){
-        $('form')[0].reset();
+      $('#two').live( 'pageshow',function(event, ui){
+        alert( 'This page was just hidden: '+ ui.prevPage);
       });
     </script>
 </body>
