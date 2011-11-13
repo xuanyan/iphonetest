@@ -32,6 +32,17 @@ class Action extends base_abstract
         $this->db->exec("INSERT INTO contact (user_id, name, tel, note, append_info) VALUES (?,?,?,?,'')", $_SESSION['id'], $info['name'], $info['tel'], $info['note']);
         $this->redirect('/');
     }
+    
+
+    function doDelete()
+    {
+        if (empty($_SESSION['id'])) {
+            $this->redirect('?r=login');
+        }
+        $id = _GET('id', 0);
+        $this->db->exec("DELETE FROM contact WHERE id = ?", $id);
+        $this->redirect('/');
+    }
 }
 
 ?>
