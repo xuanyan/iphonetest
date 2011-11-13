@@ -7,26 +7,26 @@
 <div data-role="page">
 
 	<div data-role="header" data-theme="d">
-		<h1>Add Person</h1>
+		<h1><?php echo $info['name']; ?></h1>
 		<a href="#" data-icon="back" class="ui-btn-right" data-iconpos="notext" data-rel="back">Back</a>
 	</div><!-- /header -->
 
 	<div data-role="content" class="ui-body ui-body-d">
-	  <form action="?r=add/doSave" method="post">
+	  <form action="?r=add/doSave&id=<?php echo $info['id']; ?>" method="post">
     <fieldset>
     <div data-role="fieldcontain" class="ui-hide-label">
     	<label>Name:</label>
-    	<input type="text" name="info[name]" placeholder="Name"/>
+    	<input type="text" name="info[name]" placeholder="Name" value="<?php echo $info['name']; ?>"/>
     </div>
 
     <div data-role="fieldcontain" class="ui-hide-label">
     	<label>Tel:</label>
-    	<input type="tel" name="info[tel]" placeholder="Tel"/>
+    	<input type="tel" name="info[tel]" placeholder="Tel" value="<?php echo $info['tel']; ?>"/>
     </div>
     
     
     <label for="textarea">Note:</label>
-  	<textarea name="info[note]"></textarea>
+  	<textarea name="info[note]"><?php echo $info['note']; ?></textarea>
     <script type="text/javascript" charset="utf-8">
       $('textarea').textinput();	
     </script>

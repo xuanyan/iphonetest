@@ -17,6 +17,9 @@ class Action extends base_abstract
         if (empty($_SESSION['id'])) {
             $this->redirect('?r=login');
         }
+        $id = _GET('id', 0);
+        $info = $this->db->getRow("SELECT * FROM contact WHERE id = ? AND user_id = ?", $id, $_SESSION['id']);
+        $this->view->assign('info', $info);
         $this->view->display('add.html');
     }
 

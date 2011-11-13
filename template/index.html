@@ -21,7 +21,7 @@
         		  <h3><?php echo $val['name']; ?></h3>
         		  <p><strong><?php echo $val['note']; ?></strong></p>
         		</a>
-        		<a href="lists-split-purchase.html" data-rel="dialog" data-transition="slideup">Purchase album</a>
+        		<a href="?r=add&id=<?php echo $val['id']; ?>" data-rel="dialog" data-transition="slideup">Purchase album</a>
         </li>
         <?php endforeach; ?>
 			</ul>
