@@ -5,22 +5,24 @@
 
 <body> 
 
-	<div data-role="page" class="type-interior">
+	<div data-role="page" class="type-interior" >
 
   	<div data-role="header" data-theme="d" data-position="fixed">
   	  	<a href="?r=logout" data-icon="delete">Logout</a>
   	  	<h1>Search filter bar</h1>
-		    <a href="?r=add" data-icon="plus" class="ui-btn-right" data-iconpos="notext" data-transition="slidedown">Add</a>
+		    <a href="#two" data-icon="plus" class="ui-btn-right" data-iconpos="notext" data-transition="slidedown">Add</a>
 	  </div><!-- /header -->
 
 	<div data-role="content">
 		<div class="content-primary">	
-			<ul data-role="listview" data-filter="true">
+			<ul data-role="listview" data-filter="true" data-split-icon="arrow-r" data-split-theme="d">
 			  <?php foreach ($data as $val): ?>
 			  <li><a href="tel:<?php echo $val['tel']; ?>">
-        					<h3><?php echo $val['name']; ?></h3>
-        					<p><strong><?php echo $val['tel']; ?></strong></p>
-        			</a></li>
+        		  <h3><?php echo $val['name']; ?></h3>
+        		  <p><strong><?php echo $val['note']; ?></strong></p>
+        		</a>
+        		<a href="lists-split-purchase.html" data-rel="dialog" data-transition="slideup">Purchase album</a>
+        </li>
         <?php endforeach; ?>
 			</ul>
 			</div><!--/content-primary -->		
@@ -28,5 +30,41 @@
 		</div><!-- /content -->
 
 		</div><!-- /page -->
+		
+		
+		<div data-role="page" id="two" data-theme="a">
+
+    	<div data-role="header" data-theme="d">
+    		<h1>Add Person</h1>
+    		<a href="#" data-icon="back" class="ui-btn-right" data-iconpos="notext" data-rel="back">Back</a>
+    	</div><!-- /header -->
+
+    	<div data-role="content" class="ui-body ui-body-d">
+    	  <form action="?r=add/doSave" method="post">
+        <fieldset>
+        <div data-role="fieldcontain" class="ui-hide-label">
+        	<label>Name:</label>
+        	<input type="text" name="info[name]" placeholder="Name"/>
+        </div>
+
+        <div data-role="fieldcontain" class="ui-hide-label">
+        	<label>Tel:</label>
+        	<input type="tel" name="info[tel]" placeholder="Tel"/>
+        </div>
+
+
+        <label for="textarea">Note:</label>
+      	<textarea name="info[note]"></textarea>
+        <script type="text/javascript" charset="utf-8">
+          $('textarea').textinput();	
+        </script>
+        <button type="submit" data-theme="d" name="submit" value="submit-value">Submit</button>
+
+        </fieldset>
+
+        </form>
+    	</div><!-- /content -->
+
+    </div><!-- /page two -->
 </body>
 </html>
