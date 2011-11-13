@@ -68,7 +68,7 @@
     
     <script type="text/javascript" charset="utf-8">
       $('#two').live( 'pageshow',function(event, ui){
-        alert( 'This page was just hidden: '+ ui.prevPage);
+        $('#two form')[0].reset();
       });
     </script>
 </body>
