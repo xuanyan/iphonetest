@@ -10,7 +10,7 @@
   	<div data-role="header" data-theme="d" data-position="fixed">
   	  	<a href="?r=logout" data-icon="delete">Logout</a>
   	  	<h1>Search filter bar</h1>
-		    <a href="#two" data-icon="plus" class="ui-btn-right" data-iconpos="notext" data-transition="slidedown">Add</a>
+		    <a href="#two" data-icon="plus" class="ui-btn-right" data-iconpos="notext" data-transition="slidedown" data-rel="dialog">Add</a>
 	  </div><!-- /header -->
 
 	<div data-role="content">
@@ -21,7 +21,7 @@
         		  <h3><?php echo $val['name']; ?></h3>
         		  <p><strong><?php echo $val['note']; ?></strong></p>
         		</a>
-        		<a href="?r=add&id=<?php echo $val['id']; ?>" data-rel="dialog" data-transition="slideup">Purchase album</a>
+        		<a href="?r=add&id=<?php echo $val['id']; ?>" data-rel="dialog" data-transition="slidedown">Purchase album</a>
         </li>
         <?php endforeach; ?>
 			</ul>
@@ -36,7 +36,6 @@
 
     	<div data-role="header" data-theme="d">
     		<h1>Add Person</h1>
-    		<a href="#" data-icon="back" class="ui-btn-right" data-iconpos="notext" data-rel="back">Back</a>
     	</div><!-- /header -->
 
     	<div data-role="content" class="ui-body ui-body-d">
