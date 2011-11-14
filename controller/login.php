@@ -15,7 +15,7 @@ class Action extends base_abstract
     function index()
     {
         if (!empty($_SESSION['id'])) {
-            $this->redirect('?r=index');
+            $this->redirect('/?r=index');
         }
         $this->view->display('login.html');
     }
@@ -26,7 +26,7 @@ class Action extends base_abstract
         if ($info['password'] == sha1($_POST['password'])) {
             $_SESSION = $info;
         }
-        $this->redirect('/');
+        $this->redirect('/?r=index');
     }
 }
 
