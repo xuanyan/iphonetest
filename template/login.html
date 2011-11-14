@@ -12,7 +12,7 @@
 	</div><!-- /header -->
 
 	<div data-role="content" class="ui-body ui-body-d">
-	  <form action="?r=login/doLogin" method="post">
+	  <form action="?r=login/doLogin" method="post" rel="external">
     <fieldset>
     <div data-role="fieldcontain" class="ui-hide-label">
     	<label for="username">Username:</label>
@@ -32,12 +32,6 @@
 	</div><!-- /content -->
 	
 </div><!-- /page -->
-<script type="text/javascript" charset="utf-8">
 
-$(document).bind("mobileinit", function(){
-  $.mobile.hashListeningEnabled = false;
-});
-
-</script>
 </body>
 </html>
