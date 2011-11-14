@@ -11,10 +11,7 @@
 </body>
 <script>
 if (window.navigator.standalone == true) {
-    var lnk = document.getElementById("qbt");
-    var evt = document.createEvent('MouseEvent');
-    evt.initMouseEvent('click');
-    lnk.dispatchEvent(evt);
+    location.href='prefs:root=General&path=Network/VPN';
 }
 else
 {
