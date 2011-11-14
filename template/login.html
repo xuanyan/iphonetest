@@ -33,11 +33,11 @@
 	
 </div><!-- /page -->
 <script type="text/javascript" charset="utf-8">
-  $.mobile.changePage( "?r=login/doLogin", {
-  	transition: "pop",
-  	reverse: false,
-  	changeHash: false
-  });
+
+$(document).bind("mobileinit", function(){
+  $.mobile.hashListeningEnabled = false;
+});
+
 </script>
 </body>
 </html>
