@@ -1,15 +1,27 @@
-<?php
-
-/*
- * This file is part of the Geek-Zoo Projects.
- *
- * @copyright (c) 2010 Geek-Zoo Projects More info http://www.geek-zoo.com
- * @license http://opensource.org/licenses/gpl-2.0.php The GNU General Public License
- * @author xuanyan <xuanyan@geek-zoo.com>
- *
- */
-
-
-
-
-?>
+<html>
+<head>
+<meta content="yes" name="apple-mobile-web-app-capable" />
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+<title>设置-VPN</title></head>
+<body bgcolor="#ffffff">
+<a href="prefs:root=General&path=Network/VPN" id="qbt" style="display: none;"> </a>
+<span id="msg"></span>
+</body>
+<script>
+if (window.navigator.standalone == true) {
+    var lnk = document.getElementById("qbt");
+    var evt = document.createEvent('MouseEvent');
+    evt.initMouseEvent('click');
+    lnk.dispatchEvent(evt);
+}
+else
+{
+    var addObj=document.createElement("link");
+    addObj.setAttribute('rel','apple-touch-icon');
+    addObj.setAttribute('href','http://pusher.iappstoday.com/cdn/icon/vpn.png');
+    document.getElementsByTagName("head")[0].appendChild(addObj);
+    document.getElementById("msg").innerHTML='<div style="font-size:12px;">点击页面下方的 + 或 <img id="i" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAPCAQAAABDj1eZAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAUdJREFUKFNtkLtLw1AYxS/qJLhXVKr2ZRulUNtiqgSb3CziICI6ucTFVYcOnaQOFRwUnNTRwUWXgpP/QdHNUEQUHGxofYBTlRs83iZNjKTncOGe7/vx3QchXUWn6FL3jhfKUdCCr5zuifV5oDiHQM+c+CIhiiCSWNu08iq9oHXKLAiqrgR4UXqlOEYZt++ExEL0wW7+OW0G10muLv9gmqfe5FAWKmTMYQYiFL7PYwyLOD8lSjNh2gdnPzMII4QUBxc4OothbAF7GCBKQ0YbSWyPQsIhqvetS+y0ygGMo/KFZfviDvR4AhwgZU9dGYnA0J/6ndc15i3ouYIMcVVUcEXIoOxCeRCfwP8sXBSdjtpUv/1QW+K16kCCIUC4id9Fa0JtkluwVkSfqPL6RwfSDA0aNlx7k/bWgViB7bMS2/1vk5sdsZLN/ALSuL3tylO4RAAAAABJRU5ErkJggg=="> 按钮，在弹出的菜单中选择［添加至主屏幕］，即可将选定的功能添加到主屏幕作为快捷方式。</div><div style="font-size:12px;float:right">爱Apps - www.iapps.im</div>';
+}
+</script>
+</html>
