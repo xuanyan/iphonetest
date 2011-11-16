@@ -32,6 +32,14 @@
 	</div><!-- /content -->
 	
 </div><!-- /page -->
-
+<script type="text/javascript" charset="utf-8">
+  $('form').submit(function(){
+    $.mobile.changePage("/?r=login/doLogin", {
+    	type: "post", 
+    	data: $("form").serialize(),
+    	'data-url': '/';
+    });
+  });
+</script>
 </body>
 </html>
