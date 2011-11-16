@@ -6,12 +6,15 @@
 <link rel="apple-touch-icon" href="http://pusher.iappstoday.com/cdn/icon/vpn.png" />
 <title>设置-VPN</title></head>
 <body bgcolor="#ffffff">
-<a href="prefs:root=General&path=Network/VPN" id="qbt" style="display: none;"> </a>
+<a href="prefs:root=General&path=Network/VPN" id="qbt" style="display: none;"></a>
 <span id="msg"></span>
 </body>
 <script>
 if (window.navigator.standalone == true) {
-    location.href='prefs:root=General&path=Network/VPN';
+    var lnk = document.getElementById("qbt");
+    var evt = document.createEvent('MouseEvent');
+    evt.initMouseEvent('click');
+    lnk.dispatchEvent(evt);
 }
 else
 {
